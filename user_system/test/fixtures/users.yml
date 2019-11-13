@@ -5,11 +5,12 @@ one:
   firstname: MyString
   lastname: MyString
   email: MyString
-  mobile_number: MyString
+  mobile_phone: MyString
   verified: false
   password_salt: MyString
-  encrypted_password: MyString
   language: MyString
+  encrypted_password: MyString
+  password: MyString
   confirmation_token: MyString
 
 two:
@@ -17,9 +18,10 @@ two:
   firstname: MyString
   lastname: MyString
   email: MyString
-  mobile_number: MyString
+  mobile_phone: MyString
   verified: false
   password_salt: MyString
-  encrypted_password: MyString
   language: MyString
+  encrypted_password: MyString
+  password: MyString
   confirmation_token: MyString
