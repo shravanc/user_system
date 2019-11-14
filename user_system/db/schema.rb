@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_120059) do
     t.string "firstname"
     t.string "lastname"
     t.string "email"
-    t.string "mobile_phone"
+    t.string "mobile_number"
     t.boolean "verified"
     t.string "password_salt"
     t.string "language"

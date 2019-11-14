@@ -1,1 +1,1 @@
-user = User.where(firstname: "shravan")
+user = User.where(username: "shravan", firstname: "Shravan", lastname: "Chandrashekharaiah", email: "shravan.chandrashekharaiah@gmail.com", mobile_number: "0894874193", language: "english", password: "welcome123").first_or_create
