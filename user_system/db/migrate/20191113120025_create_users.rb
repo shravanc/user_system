@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :firstname
       t.string :lastname
       t.string :email
-      t.string :mobile_phone
+      t.string :mobile_number
       t.boolean :verified
       t.string :password_salt
       t.string :language
