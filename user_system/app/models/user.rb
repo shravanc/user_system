@@ -79,7 +79,7 @@ class User < ApplicationRecord
   end
 
   def send_welcome_email
-    UserMailer.welcome_email({user: self, subject: 'Welcome to happines!!!', confirmation_url: "http://localhost:3000/users/confirmation/#{self.confirmation_token}"}).deliver_now
+    UserMailer.welcome_email({user: self, subject: 'Welcome to happines!!!', confirmation_url: "http://localhost:3000/users/confirmation?token=#{self.confirmation_token}"}).deliver_now
   end
 
   def send_forgot_email
