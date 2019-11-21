@@ -61,7 +61,7 @@ class User < ApplicationRecord
   end
 
   def user_parameters(params)
-    params.require(:user).permit([:username, :firstname, :lastname, :email, :mobile_phone, :language, :password])
+    params.require(:user).permit([:username, :firstname, :lastname, :email, :mobile_number, :language, :password])
   end
 
   def encrypt_password password, password_salt

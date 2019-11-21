@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tenants, only: [:create, :destroy]
   resources :users do
     collection do
       post :forgot_password
