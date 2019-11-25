@@ -5,6 +5,9 @@ class User < ApplicationRecord
   before_create :set_confirmation_token
   after_create :send_welcome_email
 
+  has_many :purchases
+
+
   validates :username, uniqueness: true
 
   def create params

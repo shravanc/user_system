@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :sessions do
     post :update_profile
     put :change_password
+    resources :subscription do
+      resources :plans
+    end
   end
 
 end
