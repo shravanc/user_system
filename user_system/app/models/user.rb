@@ -5,6 +5,9 @@ class User < ApplicationRecord
   before_create :set_confirmation_token
   after_create :send_welcome_email
 
+  has_many :purchases
+
+
   validates :username, uniqueness: true
 
   def create params
@@ -61,7 +64,7 @@ class User < ApplicationRecord
   end
 
   def user_parameters(params)
-    params.require(:user).permit([:username, :firstname, :lastname, :email, :mobile_phone, :language, :password])
+    params.require(:user).permit([:username, :firstname, :lastname, :email, :mobile_number, :language, :password])
   end
 
   def encrypt_password password, password_salt
