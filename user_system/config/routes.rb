@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   end
 
   resources :sessions do
+    post :ratings
+    get :ratings, action: 'list_ratings'
+    put "ratings/:id", to: "sessions#update_ratings"
     post :update_profile
     put :change_password
     resources :subscription do

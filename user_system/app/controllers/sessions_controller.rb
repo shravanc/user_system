@@ -36,4 +36,29 @@ class SessionsController < ApplicationController
       session.destroy
       render json: {message: 'Session destroyed successfully'}, status: :ok
     end
+
+    def list_ratings
+      render json: Rating.new.index
+    end
+
+    def ratings
+      rating = Rating.new
+      status, data = rating.create(params)
+      if status
+        render json: data, status: :created
+      else
+        render json: data, status: :unprocessable_entity
+      end
+    end
+
+    def update_ratings
+      rating = Rating.new
+      status, data = rating.update(params)
+      if status
+        render json: data, status: :created
+      else
+        render json: data, status: :unprocessable_entity
+      end
+    end
+
 end
