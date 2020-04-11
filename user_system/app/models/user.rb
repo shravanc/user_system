@@ -6,7 +6,7 @@ class User < ApplicationRecord
   after_create :send_welcome_email
 
   has_many :purchases
-
+  has_many :reviews
 
   validates :username, uniqueness: true
 
