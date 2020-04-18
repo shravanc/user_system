@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_04_11_154202) do
     t.integer "user_id"
     t.string "text"
     t.integer "item_id"
+    t.string "polarity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
