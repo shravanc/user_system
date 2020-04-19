@@ -2,7 +2,10 @@ class Rating < ApplicationRecord
 
 
   def index
-    return { ratings: Rating.all.as_json(only: [:id, :user_id, :item_id, :rating])}
+    ratings = Rating.all.as_json(only: [:id, :user_id, :item_id, :rating])
+    ratings = construct_details ratings
+
+    return {ratings: ratings}
   end
   
   def create params
@@ -21,7 +24,18 @@ class Rating < ApplicationRecord
 
 private
   def rating_parameters(params)
-    Rails.logger.warn(params)
     params.require(:user).permit([:user_id, :item_id, :rating])
   end
+
+  def construct_details ratings
+    components = [UserComponent.new, ItemComponent.new]
+
+    rating_visitor = RatingVisitor.new
+    components.each do |component|
+      ratings = component.accept(rating_visitor, ratings)
+    end
+    return ratings  
+
+  end
+
 end

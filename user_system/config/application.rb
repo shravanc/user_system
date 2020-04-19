@@ -25,6 +25,7 @@ module UserSystem
     config.middleware.use Apartment::Elevators::Subdomain
     config.autoload_paths += %W(#{config.root}/lib/modules/command)
     config.autoload_paths += %W(#{config.root}/lib/modules/observers)
+    config.autoload_paths += %W(#{config.root}/lib/modules/visitor)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
