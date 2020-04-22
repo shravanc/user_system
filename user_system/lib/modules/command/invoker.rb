@@ -9,10 +9,8 @@ class Invoker
   end
 
   def perform_validation
-    puts("--checking for charecter limit-----")
     @limit_check.execute if @limit_check
 
-    puts("---Checking for abuse in reviews---")
     @abuse_check.execute if @abuse_check
   end
 end

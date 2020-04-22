@@ -1,5 +1,6 @@
 class Rating < ApplicationRecord
 
+  belongs_to :user
 
   def index
     ratings = Rating.all.as_json(only: [:id, :user_id, :item_id, :rating])
