@@ -1,8 +1,8 @@
 # README
 
-> docker-compose up --build
-> docker-compose up -d
-> docker-compose exec app bundle exec rake db:setup db:migrate
-> docker-compose exec app bundle exec rake db:seed
+> docker-compose up --build </br>
+> docker-compose up -d </br>
+> docker-compose exec app bundle exec rake db:setup db:migrate </br>
+> docker-compose exec app bundle exec rake db:seed <br>
 
 
